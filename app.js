@@ -1,14 +1,15 @@
-const express = require('express');
-const app = express();
+var express = require('express');
+var path = require('path');
+var router = express.Router();
+var app = express();
 
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*")
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
-    next()
-});
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
-app.get('/', (req, res) => {
-    res.send('Hello world!');
+app.use(router);
+
+router.get('/', function(req, res) {
+    res.render('index');
 });
 
 app.listen(4567, () => {
