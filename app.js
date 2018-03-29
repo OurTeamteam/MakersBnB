@@ -44,6 +44,6 @@ router.get('/pool', function(req, res){
     });
 });
 
-app.listen(process.env.PORT || 4567, () => {
+app.listen(4567 || process.env.PORT, () => {
     console.log('Example app listening on port 4567')
 });
