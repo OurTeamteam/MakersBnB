@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<hmtl>
+  <body>
+    <form method="get" action="/addroomform">
+      <button type="submit">add room</button>
+    </form>
+    <%= name %>
+    <% results.forEach(function(data) { %>
+      <h2><%= data.firstname %></h2>
+    <% }); %>
+  </body>
+</html>
